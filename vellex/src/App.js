@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <FirstSection />
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-12 section-40vh"></div>
+          <FirstSection />
+
           <div className="col-12 section-60vh">Deuxième section </div>
           <div className="col-12 section-60vh">Troisième section</div>
           <div className="col-12 section-120vh">Quatrième section </div>

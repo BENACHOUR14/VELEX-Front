@@ -37,17 +37,17 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#element2">
+                <a className={`nav-link  ${styles.elements}`} href="#element2">
                   Clubs
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#element3">
+                <a className={`nav-link  ${styles.elements}`} href="#element3">
                   Evenements
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#element4">
+                <a className={`nav-link  ${styles.elements}`} href="#element4">
                   Contact
                 </a>
               </li>
