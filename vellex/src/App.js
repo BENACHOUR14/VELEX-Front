@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FirstSection from "./components/FirstSection";
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
@@ -12,8 +13,7 @@ function App() {
       <div className="container-fluid">
         <div className="row">
           <FirstSection />
-
-          <div className="col-12 section-60vh">Deuxième section </div>
+          <Welcome />
           <div className="col-12 section-60vh">Troisième section</div>
           <div className="col-12 section-120vh">Quatrième section </div>
           <div className="col-12 section-30vh">Cinquieme section </div>

@@ -30,24 +30,27 @@ function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse text-center" id="navbarNav">
-            <ul className="navbar-nav mx-auto" style={{ gap: "50px" }}>
+            <ul
+              className="navbar-nav mx-auto align-items-center justify-content-center"
+              style={{ gap: "50px" }}
+            >
               <li className="nav-item">
-                <a className={`nav-link  ${styles.elements}`} href="#element1">
+                <a className={styles.elements} href="#element1">
                   Accueil
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link  ${styles.elements}`} href="#element2">
+                <a className={styles.elements} href="#element2">
                   Clubs
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link  ${styles.elements}`} href="#element3">
+                <a className={styles.elements} href="#element3">
                   Evenements
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link  ${styles.elements}`} href="#element4">
+                <a className={styles.elements} href="#element4">
                   Contact
                 </a>
               </li>
