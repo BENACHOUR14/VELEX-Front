@@ -1,0 +1,13 @@
+.elements {
+  color: #cbfacf;
+  font-weight: bold;
+  font-size: medium;
+  text-decoration: none;
+}
+
+.button {
+  border-radius: 17px;
+  background-color: #225b7c;
+  border: #225b7c;
+  color: #cbfacf;
+}
