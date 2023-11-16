@@ -16,9 +16,15 @@ function App() {
         <div className="row">
           <FirstSection />
           <Welcome />
-          <div className="col-12 section-60vh">Troisième section</div>
-          <div className="col-12 section-120vh">Quatrième section </div>
-          <div className="col-12 section-30vh">Cinquieme section </div>
+          <div className="col-12 section-60vh">
+            <FuturEvent />
+          </div>
+          <div className="col-12 section-120vh">
+            <Actu />
+          </div>
+          <div className="col-12 section-30vh">
+            <Info />
+          </div>
         </div>
       </div>
       <Footer />
