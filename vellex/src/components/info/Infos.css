@@ -1,12 +1,13 @@
 .container-infos {
-    width: 100%;
+    width: 60%;
     height: 100%;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid #225B7C;
 }
 
 .info-content{
-    width: 20%;
+    width: 40%;
     height: 50%;
     background-color: #225B7C;
     border-radius: 30px;

@@ -1,5 +1,7 @@
 .section-30vh {
   height: 30vh;
+  display: flex;
+  justify-content: center;
 }
 
 .section-40vh {
@@ -17,4 +19,5 @@
 .foot{
   background-color: #225B7C;
   color: #CBFACF;
+  margin-top: 2%;
 }
