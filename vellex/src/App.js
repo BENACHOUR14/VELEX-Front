@@ -3,8 +3,8 @@ import Footer from "./components/Foot";
 import FuturEvent from "./components/futurEvent/FuturEvent";
 import Actu from "./components/actu/Actu";
 import Info from "./components/info/Infos";
-import FirstSection from "./components/FirstSection";
-import Welcome from "./components/Welcome";
+import LandingSection from "./components/LandingSection/LandingSection";
+import Presentation from "./components/Presentation/Presentation";
 import Header from "./components/Header";
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
 
       <div className="container-fluid">
         <div className="row">
-          <FirstSection />
-          <Welcome />
+          <LandingSection />
+          <Presentation />
           <div className="col-12 section-60vh">
             <FuturEvent />
           </div>

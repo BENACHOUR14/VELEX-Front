@@ -1,7 +1,8 @@
-import image from "../assets/images/image_ride.png";
-import styles from "./Welcome.module.css";
+import image from "../../assets/images/image_ride.png";
 
-function Welcome() {
+import styles from "./Presentation.module.css";
+
+function Presentation() {
   return (
     <div
       className={` col-12 section-60vh d-flex flex-row align-items-center justify-content-center ${styles.container}`}
@@ -28,4 +29,4 @@ function Welcome() {
   );
 }
 
-export default Welcome;
+export default Presentation;

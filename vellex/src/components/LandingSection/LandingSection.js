@@ -1,6 +1,6 @@
-import bg from "../assets/images/backgroundImg.png";
-import styles from "./FirstSection.module.css";
-function FirstSection() {
+import bg from "../../assets/images/backgroundImg.png";
+import styles from "./LandingSection.module.css";
+function LandingSection() {
   return (
     <>
       <div
@@ -17,4 +17,4 @@ function FirstSection() {
   );
 }
 
-export default FirstSection;
+export default LandingSection;
