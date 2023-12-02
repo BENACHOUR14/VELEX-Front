@@ -42,9 +42,9 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className={styles.elements} href="#element2">
+                <Link className={styles.elements} to="/clubs">
                   Clubs
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className={styles.elements} to="/events">
