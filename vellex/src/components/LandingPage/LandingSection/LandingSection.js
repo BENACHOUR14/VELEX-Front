@@ -1,4 +1,4 @@
-import bg from "../../assets/images/backgroundImg.png";
+import bg from "../../../assets/images/backgroundImg.png";
 import styles from "./LandingSection.module.css";
 function LandingSection() {
   return (
