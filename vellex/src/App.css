@@ -4,8 +4,16 @@
   justify-content: center;
 }
 
+.section-35vh {
+  height: 35vh;
+}
+
 .section-40vh {
   height: 40vh;
+}
+
+.section-50vh {
+  height: 50vh;
 }
 
 .section-60vh {

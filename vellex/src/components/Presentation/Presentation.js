@@ -5,7 +5,7 @@ import styles from "./Presentation.module.css";
 function Presentation() {
   return (
     <div
-      className={` col-12 section-60vh d-flex flex-row align-items-center justify-content-center ${styles.container}`}
+      className={` col-12 section-50vh d-flex flex-row align-items-center justify-content-center ${styles.container}`}
     >
       <div
         className={` ${styles.paragraph} align-items-center justify-content-center`}
