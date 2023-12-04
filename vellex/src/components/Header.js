@@ -1,5 +1,6 @@
 import logo from "../assets/images/logo.png";
 import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -18,6 +19,7 @@ function Header() {
               className="d-inline-block align-top"
             />
           </a>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -35,19 +37,19 @@ function Header() {
               style={{ gap: "50px" }}
             >
               <li className="nav-item">
-                <a className={styles.elements} href="#element1">
+                <Link className={styles.elements} to="/">
                   Accueil
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className={styles.elements} href="#element2">
+                <Link className={styles.elements} to="/clubs">
                   Clubs
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className={styles.elements} href="#element3">
+                <Link className={styles.elements} to="/events">
                   Evenements
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className={styles.elements} href="#element4">

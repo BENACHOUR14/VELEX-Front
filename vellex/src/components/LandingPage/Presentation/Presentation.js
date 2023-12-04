@@ -1,4 +1,4 @@
-import image from "../../assets/images/image_ride.png";
+import image from "../../../assets/images/image_ride.png";
 
 import styles from "./Presentation.module.css";
 
@@ -20,7 +20,7 @@ function Presentation() {
           vie.
         </p>
         <p>Rejoignez-nous pour vivre la communauté cycliste ultime ! Blabla</p>
-        <button>En savoir plus</button>
+        <button className={styles.button}>En savoir plus</button>
       </div>
       <div>
         <img src={image} className={styles.image} alt="ride" />

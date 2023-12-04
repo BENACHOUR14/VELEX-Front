@@ -1,0 +1,32 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+.inputs {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.input {
+  margin-left: 40px;
+}
+
+.search {
+  text-align: center;
+  margin: auto;
+  background-color: #00997b;
+  border-radius: 16px;
+  color: #fff;
+  margin-left: 40px;
+}
+
+.grid {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 350px);
+  grid-auto-columns: repeat(3, 350px);
+  gap: 20px;
+}
