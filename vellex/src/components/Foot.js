@@ -2,7 +2,7 @@ import React from "react";
 
 const Foot = () => {
   return (
-    <footer className="foot text-center py-3">
+    <footer className="foot text-center">
       <div className="">
         <div className="row">
           <div className="col-1 text-left">

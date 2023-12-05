@@ -1,12 +1,41 @@
-.App {
+.pageConnect {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  justify-content: center;
+  height: 85vh;
+  background-color: #CBFACF;
+}
+
+.imgConnect {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  height: 70%;
+}
+.connect {
+  display: flex;
+  justify-content: flex-start;
+  height: 70%;
+  width: 50%;
+}
+.welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 35px;
+ width: 70%;
+ background-color: white;
+}
+.welcome h1 {
+  color: #225B7C;
+  margin-bottom: 30px;
 }
 
 input {
   margin-bottom: 10px;
+  border: none; 
+  
 }
 
 button {
@@ -15,8 +44,33 @@ button {
   cursor: pointer;
 }
 
-p {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #ff0000;
+.email {
+  width: 70%;
+}
+.inputemail {
+  border: 1px solid #225B7C;
+  padding: 3px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.password {
+
+  width: 70%;
+}
+
+.inputpassword {
+  border: 1px solid #225B7C;
+  padding: 3px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.btn-connect{
+  background-color: #225B7C;
+  color: #CBFACF;
+  border: none;
+  border-radius: 6px;
+  width: 35%
 }

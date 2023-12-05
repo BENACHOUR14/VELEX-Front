@@ -1,8 +1,10 @@
 import Event from "./Event";
 import styles from "./Events.module.css";
+import { useParams  } from "react-router-dom";
 
 function Events() {
   console.log("test");
+  
   return (
     <>
       <div className={styles.container}>

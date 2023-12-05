@@ -1,5 +1,6 @@
 import styles from "./Club.module.css";
 import image from "../../assets/images/bagnoles-orne-tour-normandie-course-cyclisme-competition-regionale-nationale-velo-peloton-cyclistes-2018-1920x960.jpg";
+import { Link  } from "react-router-dom";
 function Club() {
   console.log("Test");
   return (
@@ -16,7 +17,7 @@ function Club() {
         </p>
         <p></p>
         <div className="text-center">
-          <button className={styles.button}>Détails du club</button>
+          <button className={styles.button}><Link to='/profilClub' className={styles.linker}>Détails du club</Link></button>
         </div>
       </div>
     </div>
