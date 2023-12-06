@@ -52,3 +52,54 @@
   grid-auto-columns: repeat(3, 350px);
   gap: 20px;
   }
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .centered {
+    text-align: center;
+    margin-bottom: 20px;
+  }  
+  .profilImage {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .columnsContainer {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .leftColumn,
+.rightColumn {
+  flex: 1;
+  padding: 20px;
+}
+
+.verticalSeparator {
+  width: 1px;
+  background-color: #ccc;
+  height: 100%;
+  margin: 0 20px;
+}
+
+.fieldGroup {
+  margin-bottom: 15px;
+}
+
+.fieldGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.fieldGroup input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
