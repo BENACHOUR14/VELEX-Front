@@ -1,5 +1,7 @@
 import image from "../../assets/images/bagnoles-orne-tour-normandie-course-cyclisme-competition-regionale-nationale-velo-peloton-cyclistes-2018-1920x960.jpg";
 import styles from "./Event.module.css";
+import { Link } from "react-router-dom";
+
 function Event() {
   return (
     <div className={`mt-4 text-center ${styles.event}`}>
@@ -21,7 +23,9 @@ function Event() {
           <strong>Terminée</strong>
         </p>
         <div className="text-center">
-          <button className={styles.button}>Détails de l'évenement</button>
+          <Link to="/detailEvent">
+            <button className={styles.button}>Détails de l'évenement</button>
+          </Link>
         </div>
       </div>
     </div>

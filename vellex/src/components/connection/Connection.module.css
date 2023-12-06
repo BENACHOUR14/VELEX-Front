@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 85vh;
-  background-color: #CBFACF;
+  background-color: #cbfacf;
 }
 
 .imgConnect {
@@ -18,24 +18,23 @@
   height: 70%;
   width: 50%;
 }
-.welcome{
+.welcome {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 35px;
- width: 70%;
- background-color: white;
+  width: 70%;
+  background-color: white;
 }
 .welcome h1 {
-  color: #225B7C;
+  color: #225b7c;
   margin-bottom: 30px;
 }
 
 input {
   margin-bottom: 10px;
-  border: none; 
-  
+  border: none;
 }
 
 button {
@@ -48,7 +47,7 @@ button {
   width: 70%;
 }
 .inputemail {
-  border: 1px solid #225B7C;
+  border: 1px solid #225b7c;
   padding: 3px;
   border-radius: 6px;
   margin-bottom: 10px;
@@ -56,21 +55,20 @@ button {
 }
 
 .password {
-
   width: 70%;
 }
 
 .inputpassword {
-  border: 1px solid #225B7C;
+  border: 1px solid #225b7c;
   padding: 3px;
   border-radius: 6px;
   margin-bottom: 10px;
   width: 100%;
 }
-.btn-connect{
-  background-color: #225B7C;
-  color: #CBFACF;
+.btnConnect {
+  background-color: #225b7c;
+  color: #cbfacf;
   border: none;
   border-radius: 6px;
-  width: 35%
+  width: 35%;
 }

@@ -7,11 +7,12 @@ import ProfilePage from "../components/Profil/ProfilePage";
 import Futur from "../components/Profil/Futur";
 import Club from "../components/Profil/Club";
 import Past from "../components/Profil/Past";
-import ProfilClub from "../components/Clubs/ProfilClub"
-import EventsClub from "../components/Clubs/EventsClub"
-import MembersClub from "../components/Clubs/MembersClub"
-import Follow from "../components/Profil/Follow"
-
+import ProfilClub from "../components/Clubs/ProfilClub";
+import EventsClub from "../components/Clubs/EventsClub";
+import MembersClub from "../components/Clubs/MembersClub";
+import Follow from "../components/Profil/Follow";
+import DetailEvent from "../components/Events/DetailEvent";
+import Contact from "../components/Contact/Contact";
 
 function AppRouter() {
   return (
@@ -28,7 +29,8 @@ function AppRouter() {
       <Route path="/follow" element={<Follow />} />
       <Route path="/eventClub" element={<EventsClub />} />
       <Route path="/membersClub" element={<MembersClub />} />
-
+      <Route path="/detailEvent" element={<DetailEvent />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 }

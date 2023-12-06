@@ -1,0 +1,30 @@
+body {
+  background-color: #cbfacf;
+}
+.container {
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  border: 1px solid;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form {
+  background-color: #225b7c;
+  color: #cbfacf;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.button {
+  width: 100%;
+  background-color: #cbfacf;
+  color: #225b7c;
+  border-radius: 5px;
+  font-weight: bold;
+}

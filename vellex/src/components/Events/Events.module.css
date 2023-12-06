@@ -13,6 +13,14 @@
 .input {
   flex: 1;
   margin-left: 40px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: #00997b;
+  font-weight: bold;
+  padding-left: 3px;
 }
 
 .search {

@@ -1,0 +1,58 @@
+.body {
+  background-image: url("../../assets/images/OriginBgImage.png");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #225b7c;
+}
+
+.eventdescription {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  margin: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+}
+.event {
+  flex: 1;
+  position: relative;
+}
+
+.eventDetails {
+  text-align: center;
+  flex: 1;
+}
+
+.button {
+  position: absolute;
+  right: 2px;
+  height: fit-content;
+  width: 100px;
+  border-radius: 17px;
+  background-color: #225b7c;
+  border: #225b7c;
+  color: #cbfacf;
+}
+
+.test {
+  display: inline-table;
+  margin: 40px;
+}
+
+.bar {
+  width: 10px;
+  height: 20px;
+}
+
+.map {
+  background-image: url("../../assets/images/map.jpg");
+  margin: auto;
+  width: 450px;
+  height: 300px;
+}

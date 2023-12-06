@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import logo from "../assets/images/logo.png";
 import styles from "./Header.module.css";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [userInfo, setUserInfo] = useState(null);
@@ -15,7 +15,7 @@ function Header() {
 
     fetchData();
   }, []);
-  console.log(userInfo)
+  console.log(userInfo);
 
   return (
     <>
@@ -66,21 +66,20 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className={styles.elements} href="#element4">
+                <Link className={styles.elements} to="/contact">
                   Contact
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 {!userInfo ? (
                   <Link className={styles.elements} to="/connection">
                     <button className={styles.button}>Connexion</button>
                   </Link>
-                ):(
+                ) : (
                   <Link className={styles.elements} to="/profil">
                     <button className={styles.button}>Mon profil</button>
                   </Link>
                 )}
-                
               </li>
             </ul>
           </div>
