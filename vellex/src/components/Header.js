@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import logo from "../assets/images/logo.png";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
+import jwtDecode from 'jwt-decode';
 
 function Header() {
   const [userInfo, setUserInfo] = useState(null);
+  
 
   useEffect(() => {
     const fetchData = async () => {
       const json = localStorage.getItem("token");
       const parsedUserInfo = JSON.parse(json);
-      setUserInfo(parsedUserInfo);
+      const token = parsedUserInfo.token;
+      setUserInfo(token);
     };
 
     fetchData();
