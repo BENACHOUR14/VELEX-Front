@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import logo from "../assets/images/logo.png";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
-import jwtDecode from 'jwt-decode';
+import jwtDecode from "jwt-decode";
 
 function Header() {
   const [userInfo, setUserInfo] = useState(null);
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,10 +34,15 @@ function Header() {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark"
-        style={{ backgroundColor: "#00997B", width: '100%' }}
+        style={{ backgroundColor: "#00997B", width: "100%" }}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#" style={{ marginLeft: "30px" }}>
+          <Link
+            to="/"
+            className="navbar-brand"
+            href="#"
+            style={{ marginLeft: "30px" }}
+          >
             <img
               src={logo}
               alt=""
@@ -46,7 +50,7 @@ function Header() {
               height="60"
               className="d-inline-block align-top"
             />
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"

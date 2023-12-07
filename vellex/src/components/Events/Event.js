@@ -2,28 +2,59 @@ import image from "../../assets/images/bagnoles-orne-tour-normandie-course-cycli
 import styles from "./Event.module.css";
 import { Link } from "react-router-dom";
 
-function Event() {
+function Event({
+  id,
+  name,
+  eventType,
+  description,
+  startDate,
+  endDate,
+  address,
+  city,
+  country,
+}) {
+  function FormatDateticketEvent(date) {
+    const originalDate = new Date(date);
+
+    const options = { month: "short", day: "numeric" };
+
+    const formattedDate = originalDate.toLocaleDateString("en-US", options);
+
+    return formattedDate;
+  }
+
   return (
     <div className={`mt-4 text-center ${styles.event}`}>
       <div className={styles.date}>
-        <strong>20 NOV</strong>
+        <strong>{FormatDateticketEvent(startDate)} </strong>
       </div>
 
       <div className="image">
         <img className={styles.event_img} alt="event-img" src={image}></img>
       </div>
       <div className="p-2">
-        <strong> VTT : Nom de l'évenement</strong>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </p>
+        <strong>
+          {eventType} : {name}
+        </strong>
+        <p>{description.slice(0, 200)}</p>
         <p>
           <strong>Terminée</strong>
         </p>
         <div className="text-center">
-          <Link to="/detailEvent">
+          <Link
+            to="/detailEvent"
+            state={{
+              id: id,
+              name: name,
+              eventType: eventType,
+              description: description,
+              startDate: startDate,
+              endDate: endDate,
+              address: address,
+              city: city,
+              country: country,
+            }}
+          >
             <button className={styles.button}>Détails de l'évenement</button>
           </Link>
         </div>

@@ -1,15 +1,40 @@
 import Event from "./Event";
 import styles from "./Events.module.css";
-import { useParams  } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import Header from "../Header";
 
-function Events() {
-  console.log("test");
-  
+function Events({ url }) {
+  const [eventData, setEventData] = useState(null);
+
+  const json = localStorage.getItem("token");
+  const parsedUserInfo = JSON.parse(json);
+  const token = parsedUserInfo.token;
+
+  useEffect(() => {
+    const apiUrl = `${url}events`;
+
+    axios
+      .get(apiUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Access-Control-Allow-Origin": "*",
+          "Content-type": "Application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        setEventData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching event data:", error);
+      });
+  }, [url]);
+
   return (
     <>
-    <Header />
+      <Header />
       <div className={styles.container}>
         <h2 className="text-center p-3" style={{ color: "#225B7C" }}>
           Retrouvez tous les événements
@@ -51,12 +76,21 @@ function Events() {
           <div className="title mt-3"></div>
           <div>
             <div className={styles.grid}>
-              <Event />
-              <Event />
-              <Event />
-              <Event />
-              <Event />
-              <Event />
+              {eventData
+                ? eventData.map((ev) => (
+                    <Event
+                      key={ev._id}
+                      name={ev.name}
+                      eventType={ev.eventType}
+                      startDate={ev.startDate}
+                      endDate={ev.endDate}
+                      address={ev.address}
+                      city={ev.city}
+                      country={ev.country}
+                      description={ev.description}
+                    />
+                  ))
+                : null}
             </div>
           </div>
         </div>
