@@ -104,7 +104,7 @@ const Club = ({url}) => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
               <div style={{ textAlign: 'center' }}>
                 <img src={clubImage} alt="Club" style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
-                <h2>Nom du Club</h2>
+                <h2>{userClub[0].name}</h2>
               </div>
               <button style={{color:'#CBFACF', backgroundColor:'#00997B', border:'none', borderRadius:'6px'}}>Créer événement</button>
             </div>
@@ -112,9 +112,9 @@ const Club = ({url}) => {
             <div style={{ display: 'flex', marginTop: '20px' }}>
               <div style={{ flex: 1 }}>
                 <h3>Coordonnées du Club</h3>
-                <p>Adresse: 123 Rue du Club</p>
-                <p>Ville: Ville Club</p>
-                <p>Téléphone: 123-456-7890</p>
+                <p>Adresse : {userClub[0].address}</p>
+                <p>Ville : {userClub[0].postalCode} {userClub[0].city}</p>
+                <p>Site Web : {userClub[0].website}</p>
               </div>
 
               <div style={{ flex: 1 }}>
@@ -128,8 +128,7 @@ const Club = ({url}) => {
             <div style={{ marginTop: '20px' }}>
               <h3>Description du Club</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus aliquet,
-                turpis et cursus aliquet, sem augue pharetra libero, in facilisis odio felis eu elit.
+                {userClub[0].description}
               </p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }}>
