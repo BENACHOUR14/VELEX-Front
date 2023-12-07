@@ -40,16 +40,16 @@ const Connection = ({url}) => {
   };
 
   return (
-    <div className={styles.pageConnect}>
-      <div className={styles.imgConnect}>
+    <div className="pageConnect">
+      <div className="imgConnect">
         <img src="/image_ride.png" />
       </div>
-      <div className={styles.connect}>
-        <div className={styles.welcome}>
+      <div className="connect">
+        <div className="welcome">
           <h1>Bienvenue</h1>
-          <div className={styles.email}>
+          <div className="email">
             <label>Email :</label>
-            <div className={styles.inputemail}>
+            <div className="inputemail">
               <input
                 type="text"
                 value={email}
@@ -58,9 +58,9 @@ const Connection = ({url}) => {
             </div>
           </div>
 
-          <div className={styles.password}>
+          <div className="password">
             <label>Mot de Passe :</label>
-            <div className={styles.inputpassword}>
+            <div className="inputpassword">
               <input
                 type="password"
                 value={motDePasse}
@@ -68,7 +68,7 @@ const Connection = ({url}) => {
               />
             </div>
           </div>
-          <button className={styles.btnConnect} onClick={handleLogin}>
+          <button className="btnConnect" onClick={handleLogin}>
             Se Connecter
           </button>
           <p>{message}</p>
