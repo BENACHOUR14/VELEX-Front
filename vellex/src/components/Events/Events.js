@@ -2,11 +2,14 @@ import Event from "./Event";
 import styles from "./Events.module.css";
 import { useParams  } from "react-router-dom";
 
+import Header from "../Header";
+
 function Events() {
   console.log("test");
   
   return (
     <>
+    <Header />
       <div className={styles.container}>
         <h2 className="text-center p-3" style={{ color: "#225B7C" }}>
           Retrouvez tous les événements

@@ -2,9 +2,10 @@ import React from 'react';
 import './ProfilePage.css';
 import Sidebar from './SideBar';
 import Event from "../Events/Event";
-
+import Header from '../Header';
 const Futur = () => {
   return (
+    <><Header />
     <div className="profile-container">
       <Sidebar />
         <div>
@@ -17,6 +18,7 @@ const Futur = () => {
             </div>
         </div>
     </div>
+    </>
   );
 };
 

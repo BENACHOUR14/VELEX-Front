@@ -4,7 +4,7 @@ import Sidebar from './SideBar';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import clubImage from '../../assets/images/chevre.jpg';
-
+import Header from '../Header';
 const Club = () => {
   const clubCoordinates = {
     latitude: 48.8566,
@@ -41,6 +41,7 @@ const Club = () => {
   }, [clubCoordinates]);
 
   return (
+    <><Header />
     <div className="profile-container">
       <Sidebar />
       <div className="content" style={{color:'#225B7C'}}>
@@ -81,6 +82,7 @@ const Club = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

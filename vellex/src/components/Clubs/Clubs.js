@@ -1,9 +1,12 @@
 import styles from "./Clubs.module.css";
 import Club from "./Club";
+
+import Header from "../Header";
 function Clubs() {
   console.log("Test");
   return (
     <>
+      <Header />
       <div className={styles.container}>
         <h2 className="text-center p-3" style={{ color: "#225B7C" }}>
           Retrouvez tous les clubs

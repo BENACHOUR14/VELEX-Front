@@ -8,7 +8,7 @@ function Header() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const json = localStorage.getItem("id");
+      const json = localStorage.getItem("token");
       const parsedUserInfo = JSON.parse(json);
       setUserInfo(parsedUserInfo);
     };
@@ -21,7 +21,7 @@ function Header() {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-dark"
-        style={{ backgroundColor: "#00997B" }}
+        style={{ backgroundColor: "#00997B", width: '100%' }}
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="#" style={{ marginLeft: "30px" }}>

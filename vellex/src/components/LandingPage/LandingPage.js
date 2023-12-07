@@ -3,10 +3,12 @@ import Presentation from "./Presentation/Presentation";
 import Actu from "./actu/Actu";
 import FuturEvent from "./futurEvent/FuturEvent";
 import Infos from "./info/Infos";
+import Header from "../Header";
 
 function LandingPage() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{paddingLeft: '0px', paddingRight: '0px'}}>
+      <Header />
       <div className="row">
         <LandingSection />
         <Presentation />

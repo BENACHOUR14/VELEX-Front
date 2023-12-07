@@ -2,9 +2,10 @@ import React from 'react';
 import './ProfilePage.css';
 import Sidebar from './SideBar';
 import profilImage from '../../assets/images/chevre.jpg';
-
+import Header from '../Header';
 const ProfilePage = () => {
   return (
+    <><Header />
     <div className="profile-container "  style={{color:'#225B7C'}}>
       <Sidebar />
       
@@ -48,6 +49,7 @@ const ProfilePage = () => {
           </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,8 +1,11 @@
 import styles from "./Contact.module.css";
 import img from "../../assets/images/image_ride.png";
 
+import Header from "../Header";
 function Contact() {
   return (
+    <>
+    <Header />
     <div className={`mt-5 ${styles.container}`}>
       <div className={styles.form}>
         <p>
@@ -58,6 +61,7 @@ function Contact() {
         <img alt="rider" src={img} />
       </div>
     </div>
+    </>
   );
 }
 

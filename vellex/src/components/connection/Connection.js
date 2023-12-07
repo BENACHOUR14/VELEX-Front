@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import './Connection.css';
 import axios from "axios";
+import Header from "../Header";
 
 
 const Connection = ({url}) => {
@@ -40,7 +41,10 @@ const Connection = ({url}) => {
   };
 
   return (
+    <div>
+      <Header />
     <div className="pageConnect">
+      
       <div className="imgConnect">
         <img src="/image_ride.png" />
       </div>
@@ -74,6 +78,8 @@ const Connection = ({url}) => {
           <p>{message}</p>
         </div>
       </div>
+    </div>
+    
     </div>
   );
 };
