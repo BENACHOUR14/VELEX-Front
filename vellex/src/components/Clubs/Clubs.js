@@ -3,7 +3,6 @@ import Club from "./Club";
 
 import Header from "../Header";
 function Clubs() {
-  console.log("Test");
   return (
     <>
       <Header />
