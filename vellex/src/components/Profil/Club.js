@@ -32,14 +32,18 @@ const Club = ({url}) => {
   });
 
   useEffect(() => {
-
+    monClub();
+    
+  }, [url]);
+  
+  function monClub(){
     axios.get(url+'userClubs/user/'+userId, {
       headers: {
           "Access-Control-Allow-Origin": "*",
           "Content-type": "Application/json",
           'Authorization': 'Bearer ' + token
       }
-  }).then(res =>{
+    }).then(res =>{
       console.log(res.data); 
       setUserClub(res.data)
     }).catch(error =>{
@@ -73,9 +77,7 @@ const Club = ({url}) => {
         map.remove();
       };
     }
-    
-  }, [url]);
-  console.log(userClub)
+  }
 
   const handleSaveClub = () => {
     axios.post(url+'clubs', clubData, {
@@ -85,6 +87,7 @@ const Club = ({url}) => {
         'Authorization': 'Bearer ' + token
       }
     }).then((response) => {
+        monClub();
         console.log('Club enregistré avec succès !', response.data);
       })
       .catch((error) => {

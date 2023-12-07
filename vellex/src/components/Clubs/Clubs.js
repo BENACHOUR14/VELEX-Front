@@ -1,9 +1,31 @@
+import React, { useEffect, useState } from 'react';
 import styles from "./Clubs.module.css";
 import Club from "./Club";
-
+import axios from "axios";
 import Header from "../Header";
-function Clubs() {
-  console.log("Test");
+function Clubs({url}) {
+  const [clubs, setClubs] = useState([]);
+
+  const json = localStorage.getItem("token");
+  const parsedUserInfo = JSON.parse(json);
+  const token = parsedUserInfo.token;
+
+  useEffect(() => {
+    axios
+      .get(url+'clubs', {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-type": "Application/json",
+          'Authorization': 'Bearer ' + token
+        }
+      }) 
+      .then((response) => {
+        setClubs(response.data);
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des clubs", error);
+      });
+  }, [url]);
   return (
     <>
       <Header />
@@ -36,12 +58,9 @@ function Clubs() {
           <div className="title mt-3"></div>
           <div>
             <div className={styles.grid}>
-              <Club />
-              <Club />
-              <Club />
-              <Club />
-              <Club />
-              <Club />
+            {clubs.map((club) => (
+              <Club key={club.id} club={club} />
+            ))}
             </div>
           </div>
         </div>

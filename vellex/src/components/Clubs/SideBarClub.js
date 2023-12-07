@@ -1,6 +1,7 @@
 import React from 'react';
 import './ProfilClub.css';
 import { Link  } from "react-router-dom";
+import profilClub from '../../assets/images/chevre.jpg';
 
 const SideBarClub = () => {
   return (
@@ -8,7 +9,7 @@ const SideBarClub = () => {
         <div className="profile-image-container">
           <img
             className="profile-image"
-            src="chevre.jpg"
+            src={profilClub}
             alt="Profile"
           />
         </div>

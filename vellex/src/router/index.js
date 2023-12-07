@@ -26,7 +26,7 @@ function AppRouter() {
       <Route path="/past" element={<Past url={url} />} />
       <Route path="/futur" element={<Futur url={url} />} />
       <Route path="/club" element={<Club url={url} />} />
-      <Route path="/profilClub" element={<ProfilClub url={url} />} />
+      <Route path="/profilClub/:id" exact element={<ProfilClub url={url} />} />
       <Route path="/follow" element={<Follow url={url} />} />
       <Route path="/eventClub" element={<EventsClub url={url} />} />
       <Route path="/membersClub" element={<MembersClub url={url} />} />
