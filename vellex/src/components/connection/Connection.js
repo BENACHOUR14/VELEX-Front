@@ -1,37 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./Connection.module.css";
+import React, { useState, useEffect } from 'react';
+import { useNavigate  } from 'react-router-dom';
+import './Connection.css';
+import axios from "axios";
 
-const users = {
-  utilisateurs: [
-    {
-      id: 1,
-      nom: "Doe",
-      prenom: "John",
-      email: "john.doe@example.com",
-      mot_de_passe: "motdepasse123",
-    },
-    {
-      id: 2,
-      nom: "Smith",
-      prenom: "Alice",
-      email: "alice.smith@example.com",
-      mot_de_passe: "password456",
-    },
-    {
-      id: 3,
-      nom: "Johnson",
-      prenom: "Bob",
-      email: "bob.johnson@example.com",
-      mot_de_passe: "securepass789",
-    },
-  ],
-};
 
-const Connection = () => {
-  const [email, setEmail] = useState("");
-  const [motDePasse, setMotDePasse] = useState("");
-  const [message, setMessage] = useState("");
+const Connection = ({url}) => {
+  const [email, setEmail] = useState('');
+  const [motDePasse, setMotDePasse] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
   const [data, setData] = useState("");
 
@@ -43,16 +19,24 @@ const Connection = () => {
   }, []);
 
   const handleLogin = () => {
-    const utilisateur = users.utilisateurs.find(
-      (user) => user.email === email && user.mot_de_passe === motDePasse
-    );
-
-    if (utilisateur) {
-      localStorage.setItem("id", utilisateur.id);
-      navigate("/events/");
-    } else {
-      setMessage("Identifiants incorrects. Veuillez réessayer.");
+    const loginData = {
+      "email": email,
+      "password": motDePasse
     }
+
+    axios.post(url+"users/login", loginData, {
+      headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-type": "Application/json"
+      }
+  }).then(res =>{
+      console.log(res.data.user); 
+      localStorage.setItem("token", JSON.stringify(res.data));
+      
+      navigate("/events/");
+    }).catch(error =>{
+      setMessage('Auth failure! Please create an account');
+    })
   };
 
   return (

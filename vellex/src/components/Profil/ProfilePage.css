@@ -33,6 +33,11 @@
     border-bottom: 1px solid #CBFACF;
     color: #CBFACF;
   }
+  .hederProfil{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
   
   .content {
     flex: 1;

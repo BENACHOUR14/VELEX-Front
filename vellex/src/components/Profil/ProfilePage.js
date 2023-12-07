@@ -9,9 +9,12 @@ const ProfilePage = () => {
       <Sidebar />
       
       <div className='container'>
-      
-        <div className="centered">
+      <div className='hederProfil'>
         <h2 className='title'>Mes coordonées</h2>
+        <button style={{color:'#CBFACF', backgroundColor:'#00997B', border:'none', borderRadius:'6px'}}>Deconnexion</button>
+      </div>
+        <div className="centered">
+        
           <img src={profilImage} alt="Avatar" className="profilImage" />
         </div>
         <div className="columnsContainer">

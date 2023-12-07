@@ -13,22 +13,23 @@ import MembersClub from "../components/Clubs/MembersClub";
 import Follow from "../components/Profil/Follow";
 import DetailEvent from "../components/Events/DetailEvent";
 import Contact from "../components/Contact/Contact";
+const url = "http://localhost:4000/";
 
 function AppRouter() {
   return (
     <Routes>
       <Route exact path="/" element={<LandingPage />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="/clubs" element={<Clubs />} />
-      <Route path="/connection" element={<Connection />} />
-      <Route path="/profil" element={<ProfilePage />} />
-      <Route path="/past" element={<Past />} />
-      <Route path="/futur" element={<Futur />} />
-      <Route path="/club" element={<Club />} />
-      <Route path="/profilClub" element={<ProfilClub />} />
-      <Route path="/follow" element={<Follow />} />
-      <Route path="/eventClub" element={<EventsClub />} />
-      <Route path="/membersClub" element={<MembersClub />} />
+      <Route path="/events" element={<Events url={url} />} />
+      <Route path="/clubs" element={<Clubs url={url} />} />
+      <Route path="/connection" element={<Connection url={url} />} />
+      <Route path="/profil" element={<ProfilePage url={url} />} />
+      <Route path="/past" element={<Past url={url} />} />
+      <Route path="/futur" element={<Futur url={url} />} />
+      <Route path="/club" element={<Club url={url} />} />
+      <Route path="/profilClub" element={<ProfilClub url={url} />} />
+      <Route path="/follow" element={<Follow url={url} />} />
+      <Route path="/eventClub" element={<EventsClub url={url} />} />
+      <Route path="/membersClub" element={<MembersClub url={url} />} />
       <Route path="/detailEvent" element={<DetailEvent />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
