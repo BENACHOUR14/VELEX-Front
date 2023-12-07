@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./ProfilePage.css";
 import Sidebar from "./SideBar";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import clubImage from "../../assets/images/chevre.jpg";
 import Header from "../Header";
-import { useNavigate } from "react-router-dom";
-
-const Club = () => {
-  const navigate = useNavigate();
+import "./ProfilePage.css";
+import { Navigate } from "react-router-dom";
+const Club = ({ url }) => {
+  const [userClub, setUserClub] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  const json = localStorage.getItem("token");
+  const parsedUserInfo = JSON.parse(json);
+  const token = parsedUserInfo.token;
+  const userId = parsedUserInfo.user.id;
 
   const clubCoordinates = {
     latitude: 48.8566,
@@ -16,100 +22,89 @@ const Club = () => {
   };
 
   const [clubData, setClubData] = useState({
-    name: '',
-    phoneNumber: '',
-    city: '',
-    address: '',
-    description: '',
-    website: '',
-    postalCode: '',
-    ascoNumber: '',
+    name: "",
+    phoneNumber: "",
+    city: "",
+    address: "",
+    description: "",
+    website: "",
+    postalCode: "",
+    ascoNumber: "",
   });
 
   useEffect(() => {
     const mapContainer = L.DomUtil.get("map");
 
-    axios.get(url+'userClubs/user/'+userId, {
-      headers: {
+    axios
+      .get(url + "userClubs/user/" + userId, {
+        headers: {
           "Access-Control-Allow-Origin": "*",
           "Content-type": "Application/json",
-          'Authorization': 'Bearer ' + token
-      }
-  }).then(res =>{
-      console.log(res.data); 
-      setUserClub(res.data)
-    }).catch(error =>{
-      console.log('Auth failure! Please create an account');
-    })
-    if(userClub && userClub.length > 0 ){
-      const mapContainer = L.DomUtil.get('map');
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setUserClub(res.data);
+      })
+      .catch((error) => {
+        console.log("Auth failure! Please create an account");
+      });
+    if (userClub && userClub.length > 0) {
+      const mapContainer = L.DomUtil.get("map");
 
       if (mapContainer != null) {
         mapContainer._leaflet_id = null;
       }
-  
+
       const clubIcon = new L.Icon({
         iconUrl: clubImage,
         iconSize: [50, 50],
         iconAnchor: [25, 50],
         popupAnchor: [0, -50],
       });
-  
-      const mapTiles = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-  
-      const map = L.map('map').setView([clubCoordinates.latitude, clubCoordinates.longitude], 15);
-  
+
+      const mapTiles = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+      const map = L.map("map").setView(
+        [clubCoordinates.latitude, clubCoordinates.longitude],
+        15
+      );
+
       L.tileLayer(mapTiles, {
-        attribution: '© OpenStreetMap contributors',
+        attribution: "© OpenStreetMap contributors",
       }).addTo(map);
-  
-      L.marker([clubCoordinates.latitude, clubCoordinates.longitude], { icon: clubIcon }).addTo(map);
-  
-       return () => {
+
+      L.marker([clubCoordinates.latitude, clubCoordinates.longitude], {
+        icon: clubIcon,
+      }).addTo(map);
+
+      return () => {
         map.remove();
       };
     }
-    
   }, [url]);
-  console.log(userClub)
+  console.log(userClub);
 
   const handleSaveClub = () => {
-    axios.post(url+'clubs', clubData, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-type": "Application/json",
-        'Authorization': 'Bearer ' + token
-      }
-    }).then((response) => {
-        console.log('Club enregistré avec succès !', response.data);
+    axios
+      .post(url + "clubs", clubData, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-type": "Application/json",
+          Authorization: "Bearer " + token,
+        },
+      })
+      .then((response) => {
+        console.log("Club enregistré avec succès !", response.data);
       })
       .catch((error) => {
-        console.error('Erreur lors de l\'enregistrement du club', error);
+        console.error("Erreur lors de l'enregistrement du club", error);
       });
   };
 
-    const mapTiles = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-
-    const map = L.map("map").setView(
-      [clubCoordinates.latitude, clubCoordinates.longitude],
-      15
-    );
-
-    L.tileLayer(mapTiles, {
-      attribution: "© OpenStreetMap contributors",
-    }).addTo(map);
-
-    L.marker([clubCoordinates.latitude, clubCoordinates.longitude], {
-      icon: clubIcon,
-    }).addTo(map);
-
-    return () => {
-      map.remove();
-    };
-  }, [clubCoordinates]);
-
   function navigateAddEvent() {
-    navigate("/addEvent");
+    Navigate("/addEvent");
   }
   return (
     <>
