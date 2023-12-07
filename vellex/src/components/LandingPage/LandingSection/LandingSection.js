@@ -1,5 +1,6 @@
 import bg from "../../../assets/images/backgroundImg.png";
 import styles from "./LandingSection.module.css";
+import { Link } from "react-router-dom";
 function LandingSection() {
   return (
     <>
@@ -11,7 +12,7 @@ function LandingSection() {
           Ensemble, dépassons chaque kilomètre et repoussons nos limites
         </h3>
         <br />
-        <button className={styles.button}>Rejoins-nous</button>
+        <Link to="/connection"><button className={styles.button}>Rejoins-nous</button></Link>
       </div>
     </>
   );
