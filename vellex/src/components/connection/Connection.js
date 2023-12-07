@@ -54,7 +54,7 @@ const Connection = ({ url }) => {
             <div className="email">
               <label>Email :</label>
               <div className="inputemail">
-                <input
+                <input className="iemail"
                   type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -65,7 +65,7 @@ const Connection = ({ url }) => {
             <div className="password">
               <label>Mot de Passe :</label>
               <div className="inputpassword">
-                <input
+                <input className="ipass"
                   type="password"
                   value={motDePasse}
                   onChange={(e) => setMotDePasse(e.target.value)}

@@ -53,7 +53,12 @@ button {
   margin-bottom: 10px;
   width: 100%;
 }
-
+.iemail {
+  width: 100%;
+}
+.ipass{
+  width: 100%;
+}
 .password {
   width: 70%;
 }
