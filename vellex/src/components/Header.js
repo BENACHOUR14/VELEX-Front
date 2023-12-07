@@ -11,14 +11,25 @@ function Header() {
   useEffect(() => {
     const fetchData = async () => {
       const json = localStorage.getItem("token");
-      const parsedUserInfo = JSON.parse(json);
-      const token = parsedUserInfo.token;
-      setUserInfo(token);
+      if (json) {
+        try {
+          const parsedUserInfo = JSON.parse(json);
+
+          if (parsedUserInfo && parsedUserInfo.token) {
+            setUserInfo(parsedUserInfo.token);
+          } else {
+            console.error('Le token dans le local storage n\'est pas valide.');
+          }
+        } catch (error) {
+          console.error('Erreur lors de la conversion JSON :', error);
+        }
+      } else {
+        console.error('Aucun token trouvé dans le local storage.');
+      }
     };
 
     fetchData();
   }, []);
-  console.log(userInfo);
 
   return (
     <>
