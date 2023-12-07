@@ -13,6 +13,7 @@ import MembersClub from "../components/Clubs/MembersClub";
 import Follow from "../components/Profil/Follow";
 import DetailEvent from "../components/Events/DetailEvent";
 import Contact from "../components/Contact/Contact";
+import AddEvent from "../components/Events/addEvent";
 const url = "http://localhost:4000/";
 
 function AppRouter() {
@@ -32,6 +33,7 @@ function AppRouter() {
       <Route path="/membersClub" element={<MembersClub url={url} />} />
       <Route path="/detailEvent" element={<DetailEvent />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/addEvent" element={<AddEvent />} />
     </Routes>
   );
 }
