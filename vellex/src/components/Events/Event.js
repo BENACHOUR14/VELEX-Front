@@ -3,6 +3,7 @@ import styles from "./Event.module.css";
 import { Link } from "react-router-dom";
 
 function Event({
+  key,
   id,
   name,
   eventType,
@@ -41,22 +42,7 @@ function Event({
           <strong>Terminée</strong>
         </p>
         <div className="text-center">
-          <Link
-            to="/detailEvent"
-            state={{
-              id: id,
-              name: name,
-              eventType: eventType,
-              description: description,
-              startDate: startDate,
-              endDate: endDate,
-              address: address,
-              city: city,
-              country: country,
-            }}
-          >
-            <button className={styles.button}>Détails de l'évenement</button>
-          </Link>
+        <Link to={`/detailEvent/${id}`}><button className={styles.button}>Détails de l'évenement</button></Link>
         </div>
       </div>
     </div>

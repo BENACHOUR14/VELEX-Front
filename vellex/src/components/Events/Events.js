@@ -79,7 +79,8 @@ function Events({ url }) {
               {eventData
                 ? eventData.map((ev) => (
                     <Event
-                      key={ev._id}
+                      key={ev.id}
+                      id={ev.id}
                       name={ev.name}
                       eventType={ev.eventType}
                       startDate={ev.startDate}

@@ -31,7 +31,7 @@ function AppRouter() {
       <Route path="/follow" element={<Follow url={url} />} />
       <Route path="/eventClub" element={<EventsClub url={url} />} />
       <Route path="/membersClub" element={<MembersClub url={url} />} />
-      <Route path="/detailEvent" element={<DetailEvent />} />
+      <Route path="/detailEvent/:id" exact element={<DetailEvent  url={url}/>} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/addEvent" element={<AddEvent />} />
     </Routes>
