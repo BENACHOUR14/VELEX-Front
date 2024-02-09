@@ -1,19 +1,33 @@
 import React from 'react';
 import './ProfilePage.css';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from './SideBar';
 import profilImage from '../../assets/images/chevre.jpg';
 import Header from '../Header';
-const ProfilePage = () => {
+const ProfilePage = ({url}) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+  };
+
   return (
     <><Header />
     <div className="profile-container "  style={{color:'#225B7C'}}>
       <Sidebar />
       
       <div className='container'>
-      <div className='hederProfil'>
-        <h2 className='title'>Mes coordonées</h2>
-        <button style={{color:'#CBFACF', backgroundColor:'#00997B', border:'none', borderRadius:'6px'}}>Deconnexion</button>
-      </div>
+        <div className='hederProfil'>
+          <h2 className='title'>Mes coordonées</h2>
+          <button
+              style={{ color: '#CBFACF', backgroundColor: '#00997B', border: 'none', borderRadius: '6px' }}
+              onClick={handleLogout} 
+            >
+            Déconnexion
+          </button>
+
+        </div>
         <div className="centered">
         
           <img src={profilImage} alt="Avatar" className="profilImage" />

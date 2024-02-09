@@ -10,9 +10,6 @@ import { useParams } from 'react-router-dom';
 
 const ProfileClub = ({url}) => {
   const [club, setClub] = useState([]);
-  const json = localStorage.getItem("token");
-  const parsedUserInfo = JSON.parse(json);
-  const token = parsedUserInfo.token;
   const { id } = useParams();
   console.log('ID du club:', id);
 
@@ -20,8 +17,7 @@ const ProfileClub = ({url}) => {
     axios.get(url+'clubs/'+id, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Content-type": "Application/json",
-          'Authorization': 'Bearer ' + token
+          "Content-type": "Application/json"
         }
       }) 
       .then((response) => {

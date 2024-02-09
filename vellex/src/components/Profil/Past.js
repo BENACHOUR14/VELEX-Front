@@ -14,8 +14,8 @@ const Past = () => {
                 <h1>Mes événements passé</h1>
             </div>
             <div className='futurEvent'>
-                <Event />
-                <Event />
+                
+                
             </div>
         </div>
     </div>

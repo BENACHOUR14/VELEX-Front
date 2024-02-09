@@ -8,9 +8,7 @@ import Header from "../Header";
 function Events({ url }) {
   const [eventData, setEventData] = useState(null);
 
-  const json = localStorage.getItem("token");
-  const parsedUserInfo = JSON.parse(json);
-  const token = parsedUserInfo.token;
+  
 
   useEffect(() => {
     const apiUrl = `${url}events`;
@@ -18,7 +16,6 @@ function Events({ url }) {
     axios
       .get(apiUrl, {
         headers: {
-          Authorization: `Bearer ${token}`,
           "Access-Control-Allow-Origin": "*",
           "Content-type": "Application/json",
         },

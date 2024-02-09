@@ -10,17 +10,13 @@ import mapicon from '../../assets/images/map.png'
 function DetailEvent({url}) {
   const { id } = useParams();
   const [event, setEvent] = useState([]);
-  const json = localStorage.getItem("token");
-  const parsedUserInfo = JSON.parse(json);
-  const token = parsedUserInfo.token;
 
   console.log(id)
   useEffect(() => {
     axios.get(url+'events/'+id, {
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Content-type": "Application/json",
-        'Authorization': 'Bearer ' + token
+        "Content-type": "Application/json"
       }
     }).then((response) => {
       setEvent(response.data)

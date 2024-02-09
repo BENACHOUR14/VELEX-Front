@@ -6,20 +6,17 @@ import Header from "../Header";
 function Clubs({url}) {
   const [clubs, setClubs] = useState([]);
 
-  const json = localStorage.getItem("token");
-  const parsedUserInfo = JSON.parse(json);
-  const token = parsedUserInfo.token;
 
   useEffect(() => {
     axios
       .get(url+'clubs', {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Content-type": "Application/json",
-          'Authorization': 'Bearer ' + token
+          "Content-type": "Application/json"
         }
       }) 
       .then((response) => {
+        console.log(response.data)
         setClubs(response.data);
       })
       .catch((error) => {
