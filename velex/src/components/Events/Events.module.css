@@ -1,0 +1,68 @@
+body {
+  background-color: #b9edf0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  min-height: 780px;
+  text-align: center;
+}
+
+.title {
+  color: #225b7c;
+}
+
+.inputs {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.input {
+  flex: 1;
+  margin-left: 40px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+::placeholder {
+  color: #225b7c;
+  font-weight: bolder;
+  padding-left: 3px;
+}
+
+.search {
+  margin: auto;
+  background-color: #8ce499;
+  border-radius: 16px;
+  color: #225b7c;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 350px);
+  grid-auto-columns: repeat(3, 350px);
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #b9edf0;
+}
+
+.cardImage {
+  max-width: 400px;
+  background-color: #b9edf0;
+}
+
+.button {
+  margin-right: ".25em";
+  background-color: #8ce499;
+  border-color: #8ce499;
+  color: #225b7c;
+  font-weight: bold;
+}

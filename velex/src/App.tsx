@@ -1,18 +1,15 @@
 import "./App.css";
 import { PrimeReactProvider } from "primereact/api";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Events from "./components/Events/Events";
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
+import AppRouter from "./router";
 
 function App() {
   return (
     <PrimeReactProvider>
-      <Router>
-        <div>
-          <Routes>
-            <Route path="/Events" element={<Events />} />
-          </Routes>
-        </div>
-      </Router>
+      <AppRouter />
     </PrimeReactProvider>
   );
 }
